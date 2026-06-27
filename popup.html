@@ -9,33 +9,43 @@
 
 <body>
   <main class="popup">
-    <section class="header">
-      <div>
-        <div class="label">Current tab time</div>
-        <h1 id="elapsed">00:00</h1>
+    <section class="hero">
+      <div class="app-row">
+        <img src="icons/icon-32.png" alt="" class="app-icon" />
+        <div>
+          <div class="app-title">Tab Time Tracker</div>
+          <div class="app-subtitle" id="statusText">Tracking current tab</div>
+        </div>
       </div>
-      <div class="status-dot" title="Tracking"></div>
-    </section>
-
-    <section class="info">
-      <div class="info-row">
-        <span>Tab ID</span>
-        <strong id="tabId">-</strong>
-      </div>
-
-      <div class="info-row">
-        <span>Started at</span>
-        <strong id="startedAt">-</strong>
+      <h1 id="elapsed">00:00</h1>
+      <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
       </div>
     </section>
 
-    <button id="resetButton" type="button">Reset timer</button>
+    <section class="current-tab">
+      <div class="tab-title" id="tabTitle">Current tab</div>
+      <div class="tab-domain" id="tabDomain">-</div>
+    </section>
 
-    <p class="note">
-      Timer resets automatically when you switch to another tab.
-    </p>
+    <section class="info-grid">
+      <div><span>Tab ID</span><strong id="tabId">-</strong></div>
+      <div><span>Started</span><strong id="startedAt">-</strong></div>
+    </section>
+
+    <section class="settings">
+      <label class="toggle"><input type="checkbox" id="pauseWhenWindowBlurred" /><span>Pause when Chrome loses
+          focus</span></label>
+      <label class="toggle"><input type="checkbox" id="showBadge" /><span>Show time badge on icon</span></label>
+    </section>
+
+    <div class="actions">
+      <button id="resetButton" type="button">Reset</button>
+      <button id="refreshButton" type="button" class="secondary">Refresh</button>
+    </div>
+
+    <p class="note">Timer resets automatically when you switch to another tab.</p>
   </main>
-
   <script src="popup.js"></script>
 </body>
 
