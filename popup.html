@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tab Time Tracker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <main class="popup">
+    <section class="header">
+      <div>
+        <div class="label">Current tab time</div>
+        <h1 id="elapsed">00:00</h1>
+      </div>
+      <div class="status-dot" title="Tracking"></div>
+    </section>
+
+    <section class="info">
+      <div class="info-row">
+        <span>Tab ID</span>
+        <strong id="tabId">-</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Started at</span>
+        <strong id="startedAt">-</strong>
+      </div>
+    </section>
+
+    <button id="resetButton" type="button">Reset timer</button>
+
+    <p class="note">
+      Timer resets automatically when you switch to another tab.
+    </p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
