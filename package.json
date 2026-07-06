@@ -4,7 +4,7 @@
   "description": "Chrome extension to track active usage time for tabs you have visited.",
   "author": {
     "name": "khanhpn",
-    "url": ""
+    "url": "https://github.com/khanhpn/tab_time_tracker_chrome"
   },
   "license": "MIT",
   "private": true,
@@ -17,12 +17,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/khanhpn/tab_time_tracker_chrome"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/khanhpn/tab_time_tracker_chrome/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/khanhpn/tab_time_tracker_chrome",
   "engines": {
     "node": ">=24.18.0"
   },
