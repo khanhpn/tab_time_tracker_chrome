@@ -1,4 +1,5 @@
 # Tab Times
+<img width="507" height="603" alt="Screenshot 2026-07-07 at 05 44 58" src="https://github.com/user-attachments/assets/987bef1b-80c6-4c42-9f64-7b6f820d309b" />
 
 Tab Times is a Chrome extension for tracking active time across the tabs you have visited. It keeps a live ranked list of tracked tabs, shows the current active tab first, and helps you notice when a tab is approaching a configurable focus limit.
 
