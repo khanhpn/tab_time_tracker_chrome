@@ -1,52 +1,12 @@
 <!doctype html>
-<html>
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Tab Time Tracker</title>
-  <link rel="stylesheet" href="popup.css" />
-</head>
-
-<body>
-  <main class="popup">
-    <section class="hero">
-      <div class="app-row">
-        <img src="icons/icon-32.png" alt="" class="app-icon" />
-        <div>
-          <div class="app-title">Tab Time Tracker</div>
-          <div class="app-subtitle" id="statusText">Tracking current tab</div>
-        </div>
-      </div>
-      <h1 id="elapsed">00:00</h1>
-      <div class="progress-track">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
-    </section>
-
-    <section class="current-tab">
-      <div class="tab-title" id="tabTitle">Current tab</div>
-      <div class="tab-domain" id="tabDomain">-</div>
-    </section>
-
-    <section class="info-grid">
-      <div><span>Tab ID</span><strong id="tabId">-</strong></div>
-      <div><span>Started</span><strong id="startedAt">-</strong></div>
-    </section>
-
-    <section class="settings">
-      <label class="toggle"><input type="checkbox" id="pauseWhenWindowBlurred" /><span>Pause when Chrome loses
-          focus</span></label>
-      <label class="toggle"><input type="checkbox" id="showBadge" /><span>Show time badge on icon</span></label>
-    </section>
-
-    <div class="actions">
-      <button id="resetButton" type="button">Reset</button>
-      <button id="refreshButton" type="button" class="secondary">Refresh</button>
-    </div>
-
-    <p class="note">Timer resets automatically when you switch to another tab.</p>
-  </main>
-  <script src="popup.js"></script>
-</body>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Times</title>
+  </head>
+  <body>
+    <main id="app"></main>
+    <script type="module" src="/src/popup.ts"></script>
+  </body>
 </html>

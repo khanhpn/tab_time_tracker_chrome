@@ -1,0 +1,26 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <path d="M33 31C33 25.4772 37.4772 21 43 21H91C96.5228 21 101 25.4772 101 31V73C101 78.5228 96.5228 83 91 83H43C37.4772 83 33 78.5228 33 73V31Z" fill="white" fill-opacity="0.2"/>
+  <path d="M25 42C25 36.4772 29.4772 32 35 32H83C88.5228 32 93 36.4772 93 42V84C93 89.5228 88.5228 94 83 94H35C29.4772 94 25 89.5228 25 84V42Z" fill="url(#card)" stroke="white" stroke-opacity="0.32" stroke-width="2"/>
+  <path d="M37 51H67" stroke="white" stroke-opacity="0.92" stroke-width="7" stroke-linecap="round"/>
+  <path d="M37 67H55" stroke="white" stroke-opacity="0.58" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="84" cy="81" r="27" fill="#0F172A" fill-opacity="0.28"/>
+  <circle cx="84" cy="81" r="23" fill="url(#clock)" stroke="white" stroke-opacity="0.36" stroke-width="2"/>
+  <path d="M84 67V82L96 89" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 58C96.7025 58 107 68.2975 107 81" stroke="#63F1C6" stroke-width="7" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="8" x2="112" y2="121" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10233F"/>
+      <stop offset="0.5" stop-color="#305BDA"/>
+      <stop offset="1" stop-color="#12A981"/>
+    </linearGradient>
+    <linearGradient id="card" x1="25" y1="32" x2="95" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#315BD8"/>
+      <stop offset="1" stop-color="#183052"/>
+    </linearGradient>
+    <linearGradient id="clock" x1="67" y1="59" x2="105" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12A981"/>
+      <stop offset="1" stop-color="#315BD8"/>
+    </linearGradient>
+  </defs>
+</svg>
