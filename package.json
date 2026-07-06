@@ -1,6 +1,6 @@
 {
   "name": "tab-times",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chrome extension to track active usage time for tabs you have visited.",
   "author": {
     "name": "khanhpn",
