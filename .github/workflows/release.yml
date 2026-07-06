@@ -1,0 +1,66 @@
+name: Create GitHub Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Read version from package.json
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v$VERSION"
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag already exists
+        id: check_tag
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Tag $TAG already exists. Skip release."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate release notes from commit messages
+        if: steps.check_tag.outputs.exists == 'false'
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || true)
+
+          echo "## Changes" > RELEASE_NOTES.md
+          echo "" >> RELEASE_NOTES.md
+
+          if [ -z "$LAST_TAG" ]; then
+            git log --pretty=format:"- %s (%h)" >> RELEASE_NOTES.md
+          else
+            git log "$LAST_TAG"..HEAD --pretty=format:"- %s (%h)" >> RELEASE_NOTES.md
+          fi
+
+      - name: Create GitHub Release
+        if: steps.check_tag.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          VERSION="${{ steps.version.outputs.version }}"
+
+          gh release create "$TAG" \
+            --title "v$VERSION" \
+            --notes-file RELEASE_NOTES.md
